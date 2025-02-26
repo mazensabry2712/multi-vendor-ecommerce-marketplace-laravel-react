@@ -3,6 +3,7 @@ import InputError from '@/Components/Core/InputError';
 import InputLabel from '@/Components/Core/InputLabel';
 import PrimaryButton from '@/Components/Core/PrimaryButton';
 import TextInput from '@/Components/Core/TextInput';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
@@ -29,8 +30,12 @@ export default function Login({
   };
 
   return (
-    <GuestLayout>
+    <AuthenticatedLayout>
       <Head title="Log in" />
+
+  <div className="p-9">
+  <div className="card bg-white shadow max-w-[420px] mx-auto" >
+      <div className="card-body">
 
       {status && (
         <div className="mb-4 text-sm font-medium text-green-600">
@@ -105,6 +110,13 @@ export default function Login({
           </PrimaryButton>
         </div>
       </form>
-    </GuestLayout>
+
+
+
+      </div>
+    </div>
+  </div>
+
+    </AuthenticatedLayout>
   );
 }
