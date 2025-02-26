@@ -22,8 +22,6 @@ export default function Welcome({
     <AuthenticatedLayout>
       <Head title="Home" />
 
-
-
       {/* Hero Section  */}
       <div className="hero bg-gray-200 h-[300px]">
         <div className="hero-content text-center">
@@ -37,7 +35,6 @@ export default function Welcome({
           </div>
         </div>
       </div>
-
 
 
     </AuthenticatedLayout>
