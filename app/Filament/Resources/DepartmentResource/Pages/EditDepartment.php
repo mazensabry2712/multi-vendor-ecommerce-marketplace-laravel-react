@@ -22,3 +22,4 @@ class EditDepartment extends EditRecord
         return $this->getResourse()::getUrl('index');
     }
 }
+//  
