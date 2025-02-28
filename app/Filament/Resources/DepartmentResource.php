@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Enums\RolesEnum;
 use App\Filament\Resources\DepartmentResource\Pages;
 use App\Filament\Resources\DepartmentResource\RelationManagers;
+use App\Filament\Resources\DepartmentResource\RelationManagers\CategoriesRelationManager;
 use App\Models\Department;
 use Filament\Facades\Filament;
 use Filament\Forms;
@@ -13,6 +14,7 @@ use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Str;
 use Filament\Forms\Form;
 use Filament\Forms\FormsComponent;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -71,7 +73,7 @@ class DepartmentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+          CategoriesRelationManager::class,
         ];
     }
 
