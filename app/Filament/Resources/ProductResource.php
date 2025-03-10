@@ -23,6 +23,7 @@ use App\Filament\Resources\ProductResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 
 class ProductResource extends Resource
 {
@@ -129,7 +130,11 @@ class ProductResource extends Resource
 
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                ->options(ProductStatusEnum::labels()),
+                SelectFilter::make('department_id')
+                ->relationship('department','name')
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
